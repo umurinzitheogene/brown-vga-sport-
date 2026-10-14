@@ -4,104 +4,278 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Football News | Brown VGA Sport</title>
+<title>BROWN VGA SPORT | Football News</title>
+
+<meta name="description" content="BROWN VGA SPORT - Football news, live scores, transfers and fixtures from around the world.">
 
 <style>
 * {
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --red: #ff2638;
+    --black: #080808;
+    --panel: #151515;
+    --white: #ffffff;
+    --gray: #b9b9b9;
 }
 
 body {
-  margin: 0;
-  background: #10131a;
-  color: white;
-  font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif;
+    background: var(--black);
+    color: var(--white);
+    line-height: 1.6;
 }
 
 header {
-  background: #e50914;
-  padding: 22px 12px;
-  text-align: center;
+    background: #101010;
+    padding: 18px 15px;
+    border-bottom: 2px solid var(--red);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 27px;
+.logo {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--red);
+}
+
+.tagline {
+    text-align: center;
+    color: var(--gray);
+    font-size: 12px;
 }
 
 nav {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 15px 5px;
-  background: #20232b;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 12px;
 }
 
 nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
+    color: white;
+    text-decoration: none;
+    padding: 7px 10px;
+    border-radius: 5px;
+    font-size: 13px;
 }
 
-.hero {
-  padding: 35px 18px;
-  background: linear-gradient(135deg, #620000, #151515);
+nav a:hover {
+    background: var(--red);
 }
 
-.hero h2 {
-  font-size: 30px;
+.breaking {
+    background: var(--red);
+    padding: 9px 12px;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.breaking span {
+    margin-right: 10px;
 }
 
 .container {
-  padding: 20px 15px;
+    width: 94%;
+    max-width: 1100px;
+    margin: 22px auto;
+}
+
+.hero {
+    background: linear-gradient(135deg, #311015, #151515 65%);
+    border: 1px solid #492026;
+    padding: 28px 18px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: 30px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+}
+
+.hero h1 span {
+    color: var(--red);
+}
+
+.hero p {
+    color: #dddddd;
+    margin-bottom: 18px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 16px;
+    background: var(--red);
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 .section-title {
-  border-left: 5px solid #e50914;
-  padding-left: 10px;
+    border-left: 5px solid var(--red);
+    padding-left: 10px;
+    margin: 25px 0 15px;
+    font-size: 21px;
 }
 
-.news-card {
-  background: #20232b;
-  margin: 20px 0;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid #343844;
+.search-box {
+    display: flex;
+    gap: 8px;
+    margin: 15px 0;
 }
 
-.news-content {
-  padding: 17px;
+.search-box input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px;
+    background: #202020;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 5px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.card {
+    background: var(--panel);
+    border: 1px solid #292929;
+    border-radius: 9px;
+    overflow: hidden;
+}
+
+.card-content {
+    padding: 14px;
 }
 
 .category {
-  color: #ff5555;
-  font-size: 12px;
-  font-weight: bold;
+    display: inline-block;
+    color: var(--red);
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 6px;
 }
 
-.news-card h3 {
-  margin-top: 10px;
+.card h3 {
+    font-size: 17px;
+    margin-bottom: 8px;
 }
 
-.news-card p {
-  color: #d0d0d0;
-  line-height: 1.6;
+.card p {
+    font-size: 14px;
+    color: #cccccc;
 }
 
-.read-more {
-  display: inline-block;
-  background: #e50914;
-  color: white;
-  text-decoration: none;
-  padding: 10px 15px;
-  border-radius: 5px;
+.date {
+    color: #999;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.score-card {
+    background: var(--panel);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #292929;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.score {
+    color: var(--red);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.status {
+    font-size: 11px;
+    color: #aaa;
+}
+
+.transfer-card {
+    padding: 14px;
+    background: var(--panel);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border-left: 3px solid var(--red);
+}
+
+.transfer-card p {
+    color: #ccc;
+    font-size: 14px;
+}
+
+.disclaimer {
+    color: #aaa;
+    font-size: 12px;
+    margin: 12px 0;
+}
+
+.empty {
+    display: none;
+    color: #ccc;
+    padding: 15px 0;
 }
 
 footer {
-  background: #20232b;
-  text-align: center;
-  padding: 22px 10px;
-  color: #bbb;
+    text-align: center;
+    padding: 28px 15px;
+    margin-top: 35px;
+    background: #101010;
+    border-top: 2px solid var(--red);
+    color: #bbb;
+    font-size: 13px;
+}
+
+footer strong {
+    color: var(--red);
+}
+
+@media (max-width: 750px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .score-card {
+        font-size: 13px;
+    }
 }
 </style>
 </head>
@@ -109,80 +283,278 @@ footer {
 <body>
 
 <header>
-  <h1>⚽ BROWN VGA SPORT</h1>
-  <p>Football News Around The World</p>
+    <div class="logo">BROWN <span>VGA SPORT</span></div>
+    <div class="tagline">YOUR WORLD OF FOOTBALL</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#scores">Live Scores</a>
+        <a href="#transfers">Transfers</a>
+        <a href="#leagues">Leagues</a>
+    </nav>
 </header>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="news.html">News</a>
-  <a href="index.html#scores">Scores</a>
-  <a href="index.html#transfers">Transfers</a>
-</nav>
+<div class="breaking">
+    <span>⚡ FOOTBALL CENTRAL</span>
+    Latest football coverage from BROWN VGA SPORT
+</div>
 
-<section class="hero">
-  <h2>FOOTBALL NEWS</h2>
-  <p>
-    Your destination for football stories,
-    match updates and transfer news.
-  </p>
-</section>
+<main class="container" id="home">
 
-<main class="container">
+    <section class="hero">
+        <h1>WELCOME TO <span>BROWN VGA SPORT</span></h1>
 
-  <h2 class="section-title">Latest Stories</h2>
+        <p>
+            Your destination for football news, match results,
+            fixtures, transfers and the biggest stories in football.
+        </p>
 
-  <article class="news-card">
-    <div class="news-content">
-      <span class="category">REAL MADRID</span>
-      <h3>Real Madrid News</h3>
-      <p>
-        Follow Real Madrid for team news,
-        player updates and match reports.
-      </p>
-      <a class="read-more"
-         href="https://www.realmadrid.com/en-US">
-         Official Updates
-      </a>
-    </div>
-  </article>
+        <a class="button" href="#news">Explore Football News</a>
+    </section>
 
-  <article class="news-card">
-    <div class="news-content">
-      <span class="category">WORLD FOOTBALL</span>
-      <h3>Football Around The World</h3>
-      <p>
-        Discover stories from football leagues,
-        clubs and international competitions.
-      </p>
-      <a class="read-more"
-         href="https://www.fifa.com">
-         FIFA Website
-      </a>
-    </div>
-  </article>
+    <section>
+        <h2 class="section-title">🔎 Search Football News</h2>
 
-  <article class="news-card">
-    <div class="news-content">
-      <span class="category">TRANSFERS</span>
-      <h3>Transfer Centre</h3>
-      <p>
-        Stay informed about player transfers
-        and official club announcements.
-      </p>
-      <a class="read-more"
-         href="https://www.uefa.com">
-         UEFA Website
-      </a>
-    </div>
-  </article>
+        <div class="search-box">
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search teams, players or news..."
+                aria-label="Search football news"
+            >
+            <button class="button" onclick="searchNews()">Search</button>
+        </div>
+    </section>
+
+    <section id="news">
+        <h2 class="section-title">📰 Football News</h2>
+
+        <div class="grid" id="newsGrid">
+
+            <article class="card searchable">
+                <div class="card-content">
+                    <span class="category">REAL MADRID</span>
+                    <h3>Real Madrid News</h3>
+                    <p>
+                        Follow Real Madrid updates, team news,
+                        match reports and player developments.
+                    </p>
+                    <p class="date">News category</p>
+                </div>
+            </article>
+
+            <article class="card searchable">
+                <div class="card-content">
+                    <span class="category">FC BARCELONA</span>
+                    <h3>Barcelona News</h3>
+                    <p>
+                        Explore Barcelona match reports, squad news
+                        and updates about its players.
+                    </p>
+                    <p class="date">News category</p>
+                </div>
+            </article>
+
+            <article class="card searchable">
+                <div class="card-content">
+                    <span class="category">PREMIER LEAGUE</span>
+                    <h3>English Football</h3>
+                    <p>
+                        Discover stories about Arsenal, Liverpool,
+                        Manchester City, Manchester United and more.
+                    </p>
+                    <p class="date">News category</p>
+                </div>
+            </article>
+
+            <article class="card searchable">
+                <div class="card-content">
+                    <span class="category">PLAYERS</span>
+                    <h3>Player Updates</h3>
+                    <p>
+                        Follow players including Cristiano Ronaldo,
+                        Kylian Mbappé, Vinícius Jr. and Lamine Yamal.
+                    </p>
+                    <p class="date">News category</p>
+                </div>
+            </article>
+
+            <article class="card searchable">
+                <div class="card-content">
+                    <span class="category">AFRICAN FOOTBALL</span>
+                    <h3>African Football News</h3>
+                    <p>
+                        Discover African teams, players, competitions
+                        and international football stories.
+                    </p>
+                    <p class="date">News category</p>
+                </div>
+            </article>
+
+            <article class="card searchable">
+                <div class="card-content">
+                    <span class="category">CHAMPIONS LEAGUE</span>
+                    <h3>European Competitions</h3>
+                    <p>
+                        Follow European football competitions,
+                        fixtures, results and team developments.
+                    </p>
+                    <p class="date">News category</p>
+                </div>
+            </article>
+
+        </div>
+
+        <p class="empty" id="noResults">
+            No matching categories found. Try another search.
+        </p>
+
+        <p class="disclaimer">
+            These are football news categories, not verified breaking
+            news reports. Actual stories must be added from reliable sources.
+        </p>
+    </section>
+
+    <section id="scores">
+        <h2 class="section-title">⚽ Live Scores & Fixtures</h2>
+
+        <div class="score-card">
+            <div>
+                <strong>Live Scores</strong>
+                <div class="status">Connect a football scores API</div>
+            </div>
+            <span class="score">LIVE</span>
+        </div>
+
+        <div class="score-card">
+            <div>
+                <strong>Upcoming Matches</strong>
+                <div class="status">Fixtures require an updated data source</div>
+            </div>
+            <span>📅</span>
+        </div>
+
+        <p class="disclaimer">
+            Live scores are not connected yet. No live match results
+            are being displayed until a data provider is configured.
+        </p>
+    </section>
+
+    <section id="transfers">
+        <h2 class="section-title">🔄 Transfer Centre</h2>
+
+        <div class="transfer-card">
+            <strong>Official Transfers</strong>
+            <p>
+                Transfer announcements will appear here after they
+                are verified using reliable sources.
+            </p>
+        </div>
+
+        <div class="transfer-card">
+            <strong>Transfer Rumours</strong>
+            <p>
+                Rumours should be clearly labelled and attributed
+                to the original reporting source.
+            </p>
+        </div>
+    </section>
+
+    <section id="leagues">
+        <h2 class="section-title">🏆 Football Competitions</h2>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-content">
+                    <h3>🏆 UEFA Champions League</h3>
+                    <p>European club football.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h3>🇪🇸 La Liga</h3>
+                    <p>Spanish league football.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h3>🏴 Premier League</h3>
+                    <p>English league football.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h3>🇮🇹 Serie A</h3>
+                    <p>Italian league football.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h3>🇩🇪 Bundesliga</h3>
+                    <p>German league football.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h3>🌍 African Football</h3>
+                    <p>African competitions and national teams.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
 </main>
 
 <footer>
-  <p>© 2026 BROWN VGA SPORT</p>
-  <p>Football news. Football passion.</p>
+    <p><strong>BROWN VGA SPORT</strong></p>
+    <p>Football News • Scores • Transfers • Competitions</p>
+    <p>Independent football coverage. Verify news before sharing.</p>
+    <p>© <span id="year"></span> BROWN VGA SPORT</p>
 </footer>
 
+<script>
+function searchNews() {
+    const input = document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase()
+        .trim();
+
+    const cards = document.querySelectorAll(".searchable");
+    let visibleCount = 0;
+
+    cards.forEach(function(card) {
+        const matches = card.innerText.toLowerCase().includes(input);
+
+        card.style.display = matches ? "" : "none";
+
+        if (matches) {
+            visibleCount++;
+        }
+    });
+
+    document.getElementById("noResults").style.display =
+        visibleCount === 0 ? "block" : "none";
+}
+
+document.getElementById("searchInput").addEventListener(
+    "keydown",
+    function(event) {
+        if (event.key === "Enter") {
+            searchNews();
+        }
+    }
+);
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
+
 </body>
-  </html>
+</html>
